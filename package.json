@@ -1,26 +1,83 @@
 {
-  "name": "fast-food-pos",
+  "name": "fast-food-manager",
   "version": "0.1.0",
   "description": "Point of Sale application for a Fast Food place",
+  "homepage": "https://github.com/thebeardydeveloper/fast-food-manager",
+  "author": "Maximiliano Gastòn Ledesma (The Beardy Developer)",
+  "license": "MIT",
   "main": "main.js",
   "scripts": {
     "start": "npm run build:css:prod && electron .",
     "dev": "npm run build:css && electron .",
     "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/style.css --watch",
     "build:css:prod": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/style.css --minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "keywords": [
     "electron",
     "pos",
     "fast-food"
   ],
-  "author": "Your Name",
-  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "electron": "^29.1.0",
+    "electron-builder": "^26.0.12",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17"
+  },
+  "build": {
+    "appId": "com.thebeardydeveloper.fastfoodmanager",
+    "productName": "Fast Food Manager",
+    "copyright": "Copyright © 2025 ${author}",
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "files": [
+      "**/*",
+      "!**/*.ts",
+      "!*.map",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ],
+    "extraResources": [
+      {
+        "from": "./data_defaults/",
+        "to": "data_defaults",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/win/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icons/mac/icon.icns",
+      "category": "public.app-category.business"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icons/png",
+      "category": "Office;Database;"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
   }
 }
