@@ -1,41 +1,94 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Node.js / npm / yarn / pnpm
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+pnpm-lock.yaml
 
-# env files (can opt-in for committing if needed)
-.env*
+# package-lock.json (Opcional: algunos equipos lo versionan, otros no. Si usas yarn, ignora yarn.lock en su lugar)
+# package-lock.json
+# yarn.lock
 
-# vercel
-.vercel
+# Archivos de entorno (si contienen secretos; versiona .env.example en su lugar)
+.env
+.env.*
+!.env.example
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Logs y archivos temporales
+logs/
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Sistema Operativo
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Thumbnails
+._*
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# Linux
+*~
+
+# IDEs y Editores
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+# JetBrains (IntelliJ, WebStorm, etc.)
+.idea/
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+# Atom
+.atom/
+# Netbeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+.nb-gradle/
+
+# Electron / Build output
+# Salida de electron-builder o empaquetadores similares
+dist/
+out/
+release/
+build/ # Si 'build' solo se usa para salida. Si tienes assets de origen en 'build/', ajústalo.
+*.asar
+*.exe
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.AppImage
+*.snap
+*.zip
+*.tar.gz
+*.nsis
+# Otros archivos de build de Electron
+app-update.yml
+
+# Tailwind CSS
+# Ignora el archivo CSS de salida si se genera a partir de un archivo de entrada
+# Asumiendo que assets/css/style.css es tu archivo de salida generado
+/assets/css/style.css
+
+# Archivos de datos generados en tiempo de ejecución (si accidentalmente se crean en el proyecto)
+# Nota: Nuestro proyecto guarda orders_log y current_order_draft.json en userDataPath,
+# lo cual está fuera del repositorio y es correcto.
+# Asegúrate de que ningún otro dato sensible o de tiempo de ejecución se guarde en el repo.
+# /data/orders_log/ # Ejemplo si estuviera en el proyecto
+# /data/current_order_draft.json # Ejemplo si estuviera en el proyecto
+
+# Otros
+.eslintcache
+coverage/
+*.bak

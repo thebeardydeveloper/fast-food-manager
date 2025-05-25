@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles or components */
+body {
+    @apply antialiased font-sans; /* Example: smoother font rendering */
+    /* Consider adding a default text color if not covered by panel backgrounds */
+    /* @apply text-slate-700; */
+}
+
+/* Custom scrollbar styling (optional, but nice for desktop apps) */
+/* For Webkit browsers */
+::-webkit-scrollbar {
+    width: 10px; /* Slightly wider for easier grabbing */
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    @apply bg-slate-100; /* Lighter track */
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 rounded-md; /* Softer thumb color */
+}
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500; /* Darker on hover */
+}
+
+/* This specific .selected class might still be useful if you prefer managing selection state this way,
+   otherwise, dynamic class application in JS as done for order list buttons is also good.
+   If you use the JS way, this can be removed or kept for other potential uses. */
+#orders-list-container button.selected {
+    @apply bg-blue-600 text-white;
+}
+
+/* Example of a custom component class if you find yourself repeating many utilities often */
+/*
+.btn-primary {
+  @apply px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-150;
+}
+*/

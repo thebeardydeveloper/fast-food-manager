@@ -1,0 +1,37 @@
+{
+  "categories": [
+    { "id": "cat1", "name": "Burgers" },
+    { "id": "cat2", "name": "Sides" },
+    { "id": "cat3", "name": "Drinks" }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "categoryId": "cat1",
+      "name": "Classic Burger",
+      "price": 5.99,
+      "image": "assets/images/classic_burger.png"
+    },
+    {
+      "id": "item2",
+      "categoryId": "cat1",
+      "name": "Cheese Deluxe",
+      "price": 6.99,
+      "image": "assets/images/cheese_deluxe.png"
+    },
+    {
+      "id": "item3",
+      "categoryId": "cat2",
+      "name": "Fries",
+      "price": 2.49,
+      "image": "assets/images/fries.png"
+    },
+    {
+      "id": "item4",
+      "categoryId": "cat3",
+      "name": "Soda",
+      "price": 1.99,
+      "image": "assets/images/soda.png"
+    }
+  ]
+}

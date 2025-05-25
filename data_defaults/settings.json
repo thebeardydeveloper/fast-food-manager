@@ -1,0 +1,12 @@
+{
+  "taxRate": 0.08,
+  "currencySymbol": "$",
+  "restaurantName": "Speedy Eats",
+  "restaurantAddress": "123 Main St, Anytown",
+  "restaurantPhone": "555-1234",
+  "deliveryPersonnel": [
+    { "id": "del1", "name": "John D." },
+    { "id": "del2", "name": "Maria S." }
+  ],
+  "printerName": null
+}

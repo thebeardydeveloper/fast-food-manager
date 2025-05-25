@@ -1,20 +1,26 @@
 {
-  "name": "burgers",
+  "name": "fast-food-pos",
   "version": "0.1.0",
-  "private": true,
+  "description": "Point of Sale application for a Fast Food place",
+  "main": "main.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npm run build:css:prod && electron .",
+    "dev": "npm run build:css && electron .",
+    "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/style.css --watch",
+    "build:css:prod": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/style.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.1"
-  },
+  "keywords": [
+    "electron",
+    "pos",
+    "fast-food"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "autoprefixer": "^10.4.21",
+    "electron": "^29.1.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
   }
 }
